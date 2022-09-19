@@ -1,0 +1,3 @@
+@Library("orchestra") _
+
+servicePipeline(svc: 'btc-tx-sender', promoteTo: 'dev')
