@@ -43,13 +43,11 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3023 || 3000, "0.0.0.0", () => {
-  console.log(`App listening at http://0.0.0.0:3023`)
+app.listen(process.env.APPLICATION_PORT || 3000, process.env.APPLICATION_HOST, () => {
+  console.log(`App listening at http://${process.env.APPLICATION_HOST}:${process.env.APPLICATION_PORT || 3000}`)
 })
 
 module.exports = app;
 
 
-// app.listen(process.env.APPLICATION_PORT || 3000, process.env.APPLICATION_HOST, () => {
-//   console.log(`App listening at http://${process.env.APPLICATION_HOST}:${process.env.APPLICATION_PORT || 3000}`)
-// })
+
